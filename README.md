@@ -2,7 +2,7 @@
 
 Djib bot is a bot allowing to order product online (book, clothers...)
 
-# Initialize
+# Install
 
 ## Dependencies install
 
