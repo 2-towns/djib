@@ -1,0 +1,14 @@
+[Backend]
+curl
+
+[Method]
+GET
+
+[BackendOptions]
+-i -s 
+#-w '\nTotal: %{time_total}s\n'
+
+# Short help:
+# Comments start with hash-sign (#) and are ignored.
+# ${VARIABLES} are replaced with the .env-file or environment variable value
+# $(executables.sh) are replaced with the output of that executable
