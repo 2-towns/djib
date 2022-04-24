@@ -1,14 +1,18 @@
+# Djib bot
+
 Djib bot is a bot allowing to order product online (book, clothers...)
 
 # Initialize
 
-## Database migration
+## Dependencies install
 
 Run the install command:
 
 ```
 python -m pip install .
 ```
+
+## Database migration
 
 Run the migrate command:
 
