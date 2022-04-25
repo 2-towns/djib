@@ -12,6 +12,10 @@ Run the install command:
 python -m pip install .
 ```
 
+## Settings
+
+Copy the file djib/settings_template.py to djib/settings.py and made the changes that you need.
+
 ## Database migration
 
 Run the migrate command:
@@ -49,5 +53,7 @@ Start ngrok:
 ```
 
 Copy the https URL and add it as a prefix of the `URL` variable into the .env file. You should have something like `https://ad7b-41-98-224-108.eu.ngrok.io/bot/AZAZ...`
+
+You have to update the `NGROK_HOST` in your settings.
 
 Access to your telegram Bot. You should receive a `Coucou` message.

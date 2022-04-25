@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+NGROK_HOST = ""
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-h6jn)@x@*y@)mj8(5su)t=hhgdmc79kakupw$!cc3m660y#d$&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ad7b-41-98-224-108.eu.ngrok.io"]
+ALLOWED_HOSTS = [NGROK_HOST]
 
 
 # Application definition

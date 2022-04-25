@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    {% load static %}
+
+    <style>
+      :root {
+        --border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar {
+        height: 5px;
+        cursor: pointer;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        /*background-color: var(--tg-theme-button-color, #2da192);*/
+        background-color: #f29200;
+        border-radius: 4px;
+        height: 5px;
+        cursor: pointer;
+      }
+
+      .mobile ::-webkit-scrollbar {
+        display: none;
+      }
+
+      html {
+        margin: 0;
+      }
+
+      body {
+        background-color: var(--bg_color);
+        margin: 0;
+        font-family: "Open Sans";
+        font-size: 13px;
+      }
+
+      #root {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        cursor: pointer;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .fill {
+        flex: 1;
+      }
+
+      .column {
+        flex-direction: column;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .wrap {
+        flex-wrap: wrap;
+      }
+
+      .mr-16 {
+        margin-right: 16px;
+      }
+
+      .ml-16 {
+        margin-left: 16px;
+      }
+
+      .mr-8 {
+        margin-right: 8px;
+      }
+
+      .ml-8 {
+        margin-left: 8px;
+      }
+
+      .mr-4 {
+        margin-right: 4px;
+      }
+
+      .mb-8 {
+        margin-bottom: 8px;
+      }
+
+      .mb-0 {
+        margin-bottom: 0px;
+      }
+
+      .mt-0 {
+        margin-top: 0px;
+      }
+
+      .mb-16 {
+        margin-bottom: 16px;
+      }
+
+      .mb-24 {
+        margin-bottom: 24px;
+      }
+
+      .mt-8 {
+        margin-top: 8px;
+      }
+
+      .mt-4 {
+        margin-top: 4px;
+      }
+
+      .mt-16 {
+        margin-top: 16px;
+      }
+
+      .p-16 {
+        padding: 16px;
+      }
+
+      .p-22 {
+        padding: 22px;
+      }
+
+      .mx-22 {
+        margin-left: 22px;
+        margin-right: 22px;
+      }
+
+      .pr-16 {
+        padding-right: 16px;
+      }
+
+      .px-16 {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .bg_color {
+        /*background-color: var(--tg-theme-bg-color, #282e33);*/
+        background-color: white;
+      }
+
+      p.text_color {
+        /*color: var(--tg-theme-text-color, #fff);*/
+        color: #444;
+      }
+
+      a {
+        color: white;
+      }
+
+      .hint_color {
+        /*color: var(--tg-theme-hint-color, #2da192);*/
+        color: #777;
+      }
+
+      .link_color {
+        /*color: var(--tg-theme-link-color, #fff);*/
+        color: #f29200;
+      }
+
+      .button_color {
+        /*background-color: var(--tg-theme-button-color, #2da192);*/
+        background: #f29200;
+      }
+
+      .button_text_color {
+        /*color: var(--tg-theme-button-text-color, #fff);*/
+        color: white;
+      }
+
+      .round-button {
+        border-radius: 32px;
+        padding: 6px 12px;
+        border: 1px solid var(--tg-theme-button-color, #2da192);
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      .round-button--selected {
+        background-color: var(--tg-theme-button-color, #2da192);
+      }
+
+      .button {
+        border-radius: var(--border-radius);
+        padding: 6px 12px;
+        width: calc(100% - 24px);
+        display: block;
+        text-align: center;
+      }
+
+      .banner {
+        height: 20px;
+        padding: 8px 19px 8px 19px;
+        width: calc(100% - 38px);
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--tg-theme-button-color);
+        cursor: pointer;
+      }
+
+      .scroll {
+        overflow-x: auto;
+        padding-bottom: 14px;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+
+      .h-padding {
+        padding-left: 23px;
+        padding-right: 23px;
+      }
+
+      .h-margin {
+        margin-left: 23px;
+        margin-right: 23px;
+      }
+
+      .input {
+        border: none;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.2);
+        font-family: "Open Sans";
+        /*color: var(--tg-theme-text-color, #fff);*/
+        width: 100%;
+        font-size: 12px;
+        outline: none;
+        padding-left: 23px;
+        padding-right: 23px;
+      }
+
+      .small {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body class="bg_color text_color">
+    <div id="root"></div>
+  </body>
+  <script>
+    const WebApp = window.Telegram.WebApp;
+    WebApp.expand();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/preact/10.7.1/preact.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/preact/10.7.1/hooks.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/htm/3.1.0/htm.js"></script>
+  <script src="{% static 'bot/app.js' %}"></script>
+</html>
