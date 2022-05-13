@@ -9,7 +9,7 @@ Djib bot is a bot allowing to order product online (book, clothers...)
 Run the install command:
 
 ```
-python -m pip install .
+python -m pip install -r requirements.txt
 ```
 
 ## Settings
@@ -52,7 +52,7 @@ Start ngrok:
 ./ngrok http 8000
 ```
 
-Copy the https URL and add it as a prefix of the `URL` variable into the .env file. You should have something like `https://ad7b-41-98-224-108.eu.ngrok.io/bot/AZAZ...`
+Copy the https URL and add it as a prefix of the `URL` variable into the .env file. Take the right side of the telegram token after `:`. Example with: XXX:YYYYYYY, you should have something like `https://ad7b-41-98-224-108.eu.ngrok.io/bot/YYYYYYY...`
 
 You have to update the `NGROK_HOST` in your settings.
 
